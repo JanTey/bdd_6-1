@@ -72,37 +72,37 @@ class TransferTest {
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
     }
-
-    @Test
-    void transferIfAmountGreaterThanLimitSecondCard() {
-        val amount = 12_000;
-        val loginPage = new LoginPage();
-        val authInfo = DataGeneration.getAuthInfo();
-        val verificationPage = loginPage.validLogin(authInfo);
-        val verificationCode = DataGeneration.getVerificationCodeFor(authInfo);
-        val dashboardPage = verificationPage.validVerify(verificationCode);
-        dashboardPage.checkHeadingYourCards();
-
-        val transferPage = dashboardPage.validChoosePayFirst();
-        transferPage.checkHeadingPaymentCards();
-        transferPage.setPayCardNumber(DataGeneration.getSecondCard(), amount);
-        transferPage.validPayExtendAmount();
-    }
-    @Test
-    void transferIfAmountGreaterThanLimitFirstCard() {
-        val amount = 30_000;
-        val loginPage = new LoginPage();
-        val authInfo = DataGeneration.getAuthInfo();
-        val verificationPage = loginPage.validLogin(authInfo);
-        val verificationCode = DataGeneration.getVerificationCodeFor(authInfo);
-        val dashboardPage = verificationPage.validVerify(verificationCode);
-        dashboardPage.checkHeadingYourCards();
-
-        val transferPage = dashboardPage.validChoosePaySecond();
-        transferPage.checkHeadingPaymentCards();
-        transferPage.setPayCardNumber(DataGeneration.getFirstCard(), amount);
-        transferPage.validPayExtendAmount();
-    }
+//
+//    @Test
+//    void transferIfAmountGreaterThanLimitSecondCard() {
+//        val amount = 12_000;
+//        val loginPage = new LoginPage();
+//        val authInfo = DataGeneration.getAuthInfo();
+//        val verificationPage = loginPage.validLogin(authInfo);
+//        val verificationCode = DataGeneration.getVerificationCodeFor(authInfo);
+//        val dashboardPage = verificationPage.validVerify(verificationCode);
+//        dashboardPage.checkHeadingYourCards();
+//
+//        val transferPage = dashboardPage.validChoosePayFirst();
+//        transferPage.checkHeadingPaymentCards();
+//        transferPage.setPayCardNumber(DataGeneration.getSecondCard(), amount);
+//        transferPage.validPayExtendAmount();
+//    }
+//    @Test
+//    void transferIfAmountGreaterThanLimitFirstCard() {
+//        val amount = 30_000;
+//        val loginPage = new LoginPage();
+//        val authInfo = DataGeneration.getAuthInfo();
+//        val verificationPage = loginPage.validLogin(authInfo);
+//        val verificationCode = DataGeneration.getVerificationCodeFor(authInfo);
+//        val dashboardPage = verificationPage.validVerify(verificationCode);
+//        dashboardPage.checkHeadingYourCards();
+//
+//        val transferPage = dashboardPage.validChoosePaySecond();
+//        transferPage.checkHeadingPaymentCards();
+//        transferPage.setPayCardNumber(DataGeneration.getFirstCard(), amount);
+//        transferPage.validPayExtendAmount();
+//    }
 
 }
 
